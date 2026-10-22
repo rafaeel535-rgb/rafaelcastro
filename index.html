@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Portfolio de Rafael Castro Yangüez. Sistemas informáticos, redes y soporte técnico. Formación en SMR y ASIR." name="description"/>
+<meta content="#0c1525" name="theme-color"/>
+<meta content="Rafael Castro Yangüez | Portfolio profesional" property="og:title"/>
+<meta content="Sistemas informáticos, redes y soporte técnico." property="og:description"/>
+<title>Rafael Castro Yangüez — Sistemas y soporte informático</title>
+<style>
+    :root{--ink:#f3f7fc;--secondary:#b3c1d1;--muted:#8196ad;--night:#0b1320;--surface:#101c2b;--surface2:#142337;--line:#283a50;--sky:#5dd9ec;--cyan:#35bfd6;--mint:#73e0c6;--radius:18px;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;background:#0b1422;color:var(--ink);font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.68;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    ::selection{background:#2b8396;color:#fff}
+    .wrap{max-width:var(--max);margin-inline:auto;padding-inline:25px}
+    .skip{position:fixed;left:12px;top:-90px;background:#fff;color:#06121e;border-radius:10px;padding:8px 14px;z-index:99}.skip:focus{top:12px}
+    .bar{position:sticky;top:0;z-index:30;backdrop-filter:blur(15px);background:rgba(10,19,32,.91);border-bottom:1px solid rgba(161,188,219,.11)}
+    .bar-row{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:22px}
+    .mark{display:inline-flex;align-items:center;gap:11px;font-size:.95rem;font-weight:800;letter-spacing:.015em;text-decoration:none;white-space:nowrap}
+    .mark-symbol{width:37px;height:37px;background:#19364a;color:#8be8ee;border:1px solid rgba(120,225,235,.3);display:grid;place-items:center;border-radius:11px;letter-spacing:-.045em;font-size:.91rem}
+    nav{display:flex;gap:28px;align-items:center}
+    nav a{text-decoration:none;color:#c2d1de;font-size:.87rem;font-weight:620;transition:color .2s}
+    nav a:hover,nav a:focus-visible{color:var(--sky)}
+    nav a:last-child{border:1px solid #36566a;border-radius:9px;padding:9px 15px;color:#a9e6e9}
+    .menu{display:none;border:1px solid var(--line);border-radius:9px;background:#152436;color:#fff;font-size:1.15rem;width:42px;height:42px;cursor:pointer}
+    .intro{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid rgba(161,188,219,.09)}
+    .intro:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.36;background-image:radial-gradient(#38647a 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(90deg,transparent 22%,#000 100%)}
+    .intro:after{content:"";position:absolute;z-index:-1;width:550px;height:550px;top:-220px;right:-90px;border-radius:50%;background:radial-gradient(circle,rgba(31,130,166,.19),transparent 70%)}
+    .intro-grid{display:grid;grid-template-columns:1.13fr .87fr;gap:75px;align-items:center;padding-top:94px;padding-bottom:98px}
+    .kicker{display:inline-flex;align-items:center;gap:11px;letter-spacing:.14em;color:var(--sky);text-transform:uppercase;font-size:.71rem;font-weight:840}
+    .kicker:before{content:"";width:24px;height:2px;background:var(--mint)}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(3rem,6.3vw,5rem);line-height:1.06;letter-spacing:-.055em;margin:19px 0 19px;font-weight:810}
+    .role{font-size:clamp(1.13rem,2.1vw,1.5rem);color:var(--sky);font-weight:690;line-height:1.35;letter-spacing:-.018em;margin:0 0 20px}
+    .intro-copy{max-width:580px;color:#bac9db;font-size:1.025rem;line-height:1.9;margin:0}
+    .button-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:49px;padding:11px 19px;border-radius:11px;text-decoration:none;font-size:.9rem;font-weight:775;transition:transform .18s,background .18s,border-color .18s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:#64dbe8;color:#0a1a26}
+    .btn-primary:hover{background:#9ce9ed}
+    .btn-ghost{border:1px solid #3e596c;background:rgba(18,34,51,.73);color:#deedf7}
+    .btn-ghost:hover{border-color:#83ccd5}
+    .subdetail{display:flex;align-items:center;gap:10px;color:#9bacbd;font-size:.85rem;margin-top:25px}
+    .subdetail svg{width:16px;height:16px;stroke:#7fdde5;stroke-width:1.8;fill:none}
+    .tech-panel{width:min(100%,430px);margin:auto;border:1px solid #31516a;border-radius:22px;background:linear-gradient(165deg,#162b40 0%,#102032 50%,#0d1828 100%);box-shadow:0 32px 75px rgba(0,0,0,.3);overflow:hidden;position:relative}
+    .tech-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 95% 12%,rgba(93,217,236,.14),transparent 45%);pointer-events:none}
+    .tech-windowbar{height:53px;border-bottom:1px solid #294356;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:relative}
+    .tech-windowbar>span{font-size:.66rem;color:#98aec3;letter-spacing:.12em;font-weight:800}
+    .tech-dots{display:flex;gap:7px}.tech-dots span{height:9px;width:9px;background:#647e95;border-radius:50%}.tech-dots span:first-child{background:#d88b86}.tech-dots span:nth-child(2){background:#d8ba78}.tech-dots span:last-child{background:#7fd4ad}
+    .tech-inside{padding:31px 29px 26px;position:relative}
+    .tech-eyebrow{font-size:.67rem;letter-spacing:.16em;font-weight:850;color:#79d9de;margin-bottom:11px}
+    .tech-panel-title{font-size:clamp(1.7rem,2.7vw,2.25rem);letter-spacing:-.045em;line-height:1.17;font-weight:800;margin-bottom:27px}
+    .tech-panel-title em{font-style:normal;color:#6cdedb}
+    .tech-rows{display:grid;gap:11px}
+    .tech-row{display:flex;align-items:center;gap:12px;padding:13px 12px;background:#142c41;border:1px solid #31506a;border-radius:12px}
+    .tech-row-symbol{width:35px;height:35px;border-radius:9px;display:grid;place-items:center;color:#82deed;background:#1b4153;border:1px solid #316278;font-family:Consolas,monospace;font-size:.82rem;font-weight:800;flex:none}
+    .tech-row div{min-width:0;flex:1}
+    .tech-row strong{display:block;font-size:.88rem;line-height:1.45}
+    .tech-row small{display:block;color:#a7bfd0;line-height:1.45;font-size:.71rem}
+    .tech-row-arrow{color:#6cbbca;font-weight:800}
+    .tech-bottom{display:flex;align-items:center;gap:10px;margin-top:24px;color:#a7bbc9;font-size:.76rem}
+    .tech-bottom-dot{width:8px;height:8px;border-radius:50%;background:#78e2bf;box-shadow:0 0 0 4px rgba(120,226,191,.1)}
+    .stripe{background:#111f30;border-bottom:1px solid rgba(161,188,219,.11)}
+    .stripe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .stripe-item{padding:25px 0}
+    .stripe-item + .stripe-item{border-left:1px solid rgba(145,169,199,.14);padding-left:31px}
+    .stripe-item span{display:block;text-transform:uppercase;color:#90a4b8;letter-spacing:.12em;font-size:.66rem;font-weight:800;margin-bottom:2px}
+    .stripe-item strong{font-size:.94rem;font-weight:750}
+    .section{padding:102px 0}
+    .section:nth-of-type(even){background:#0e1929}
+    .section-heading{display:grid;grid-template-columns:.38fr .62fr;gap:30px;align-items:end;margin-bottom:36px}
+    .index{display:flex;align-items:center;gap:12px;color:#77dce8;font-size:.74rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    .index:before{content:"";height:1px;width:35px;background:#4c9caa}
+    h2{font-size:clamp(2rem,3.4vw,2.75rem);line-height:1.18;letter-spacing:-.04em;margin:9px 0 0;font-weight:800}
+    .section-heading p{max-width:575px;margin:0 0 4px;color:var(--secondary);line-height:1.85}
+    .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px}
+    .about-main{padding:30px 34px;background:#142338;border-radius:var(--radius);border:1px solid #253c54}
+    .about-main p{font-size:1.025rem;color:#c8d5e6;line-height:1.93;margin:0 0 16px}
+    .about-main p:last-child{margin-bottom:0}
+    .aside-panel{padding:28px;border:1px solid #284155;border-radius:var(--radius);background:linear-gradient(140deg,#133044,#102235)}
+    .aside-panel h3{font-size:1.15rem;line-height:1.35;margin:0 0 8px}
+    .aside-intro{font-size:.9rem;line-height:1.65;color:#a9c1d2;margin:0 0 20px}
+    .focus-list{display:grid;gap:10px}
+    .focus-item{display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 13px;background:rgba(9,21,36,.36);border:1px solid rgba(131,209,223,.16);border-radius:12px}
+    .focus-number{height:30px;width:30px;display:grid;place-items:center;border-radius:8px;background:rgba(93,217,236,.10);color:#82e5e9;font-size:.76rem;font-weight:800;letter-spacing:.02em}
+    .focus-item h4{font-size:.93rem;line-height:1.4;margin:0 0 4px;color:#eff9fc}
+    .focus-item p{font-size:.835rem;line-height:1.6;margin:0;color:#b9cedc}
+    .focus-item .future{font-size:.68rem;font-weight:750;color:#91f0d0;display:inline-block;margin-left:6px;letter-spacing:.015em;vertical-align:baseline}
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .skill-card{min-height:227px;border:1px solid #253b53;background:linear-gradient(160deg,#142438,#101e2f);border-radius:var(--radius);padding:27px 30px}
+    .skill-head{display:flex;align-items:center;gap:15px;margin-bottom:11px}
+    .skill-icon{display:grid;place-items:center;width:45px;height:45px;flex:0 0 auto;border:1px solid #36657a;border-radius:13px;background:#19384a;color:#72dce9}
+    .skill-icon svg{width:25px;height:25px;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;fill:none}
+    .skill-card h3{margin:0;font-size:1.12rem;letter-spacing:-.012em}
+    .skill-card p{margin:0 0 16px;color:#b9cad8;line-height:1.8;font-size:.95rem}
+    .tags{display:flex;gap:7px;flex-wrap:wrap}
+    .tags span{font-size:.735rem;border:1px solid rgba(93,217,236,.19);background:rgba(63,142,164,.11);color:#b6e0e8;border-radius:7px;padding:5px 9px;font-weight:700}
+    .timeline{border-left:1px solid #305369;margin-left:9px;padding-left:34px;display:grid;gap:18px}
+    .job{position:relative;border:1px solid #263e54;border-radius:var(--radius);background:#142337;padding:27px 32px}
+    .job:before{content:"";position:absolute;left:-42px;top:34px;width:13px;height:13px;background:#69dce0;border-radius:50%;box-shadow:0 0 0 6px #0d1928;border:1px solid #156779}
+    .job-head{display:flex;align-items:start;justify-content:space-between;gap:18px;margin-bottom:15px}
+    .job h3{font-size:1.14rem;line-height:1.35;margin:6px 0 4px}
+    .job .employer{font-size:.82rem;letter-spacing:.1em;color:#81dce1;text-transform:uppercase;font-weight:850}
+    .date{background:#1b3447;border:1px solid #2e4c60;color:#acc4d6;border-radius:9px;padding:6px 11px;font-size:.75rem;font-weight:775;white-space:nowrap}
+    .job ul{margin:0;padding-left:19px;color:#c1d0df}
+    .job li{padding-left:2px;margin-bottom:5px}
+    .education{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .edu{border:1px solid #2a4057;background:#132237;padding:28px;border-radius:var(--radius);position:relative}
+    .edu .years{font-size:.85rem;color:#83dce5;font-weight:800;margin-bottom:17px}
+    .edu h3{font-size:1.09rem;line-height:1.44;margin:0 0 14px}
+    .edu p{font-size:.89rem;color:#a9bfd2;margin:0}
+    .edu .status{display:inline-block;margin-top:14px;font-size:.72rem;color:#95eed9;font-weight:800;border:1px solid #376e69;padding:5px 9px;border-radius:7px}
+    .contact{padding:85px 0 100px;background:radial-gradient(ellipse at 85% 85%,rgba(35,124,153,.15),transparent 55%),#0a1422}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+    .contact h2{margin:14px 0 17px}
+    .contact p{color:#becddd;max-width:480px}
+    .contact-links{display:grid;gap:13px}
+    .contact-item{background:#112339;border:1px solid #2c4962;border-radius:14px;text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:17px 19px;gap:16px;transition:border-color .18s,transform .18s}
+    .contact-item:hover{border-color:#75dce7;transform:translateY(-2px)}
+    .contact-item b{display:block;font-size:.89rem}.contact-item small{display:block;color:#9fb9ce;word-break:break-word}
+    .contact-item .arrow{color:#72deee;font-size:1.25rem}
+    footer{border-top:1px solid rgba(161,188,219,.09);background:#08111d;padding:24px 0;color:#91a5b9;font-size:.82rem}
+    .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    footer a{text-decoration:none;color:#a7e1e7}
+    @media(max-width:970px){
+      .intro-grid{gap:35px}
+      .tech-panel{width:min(100%,420px)}
+      .section-heading{grid-template-columns:1fr;gap:12px}
+      .about-grid{grid-template-columns:1fr}
+      .education{grid-template-columns:1fr}
+    }
+    @media(max-width:735px){
+      .bar-row{min-height:69px}
+      .menu{display:block}
+      nav{display:none;position:absolute;top:69px;left:0;right:0;padding:16px 25px 22px;border-bottom:1px solid #284057;background:#0e1b2c;box-shadow:0 20px 30px rgba(0,0,0,.27)}
+      nav.open{display:flex;flex-direction:column;align-items:stretch;gap:15px}
+      nav a:last-child{width:max-content}
+      .intro-grid{grid-template-columns:1fr;gap:62px;padding-top:64px;padding-bottom:84px}
+      .tech-panel{width:min(100%,420px)}
+      h1{font-size:clamp(2.5rem,10vw,3.5rem)}
+      .stripe-grid{grid-template-columns:1fr}
+      .stripe-item{padding:16px 0}
+      .stripe-item+.stripe-item{border-left:0;border-top:1px solid rgba(145,169,199,.14);padding-left:0}
+      .section{padding:75px 0}
+      .about-main,.aside-panel{padding:23px}
+      .skills{grid-template-columns:1fr}
+      .job-head{flex-direction:column;gap:8px}
+      .timeline{padding-left:24px}
+      .job:before{left:-32px}
+      .job{padding:23px}
+      .contact-grid{grid-template-columns:1fr;gap:28px}
+      .contact{padding:70px 0 80px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<header class="bar">
+<div class="wrap bar-row">
+<a aria-label="Ir al inicio" class="mark" href="#inicio"><span class="mark-symbol">RC</span><span>Rafael Castro</span></a>
+<button aria-controls="navigation" aria-expanded="false" aria-label="Abrir menú" class="menu" id="menu" type="button">☰</button>
+<nav aria-label="Navegación principal" id="navigation">
+<a href="#conocimientos">Conocimientos</a><a href="#perfil">Perfil</a>
+
+<a href="#experiencia">Experiencia</a>
+<a href="#formacion">Formación</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+<main id="contenido">
+<section class="intro" id="inicio">
+<div class="wrap intro-grid">
+<div>
+<span class="kicker">Portfolio profesional · Informática</span>
+<h1>Rafael Castro<br/>Yangüez<span style="color:#62dbe6">.</span></h1>
+<p class="role">Sistemas informáticos · Redes · Soporte IT</p>
+<p class="intro-copy">Tengo formación en Sistemas Microinformáticos y Redes (SMR) y actualmente curso Administración de Sistemas Informáticos en Red (ASIR). Me interesan especialmente los sistemas Windows, las redes y la gestión de usuarios. Cuento también con experiencia en mantenimiento de equipos y resolución de incidencias. A futuro, quiero orientar mi carrera hacia la administración de sistemas y la ciberseguridad.</p>
+<div class="button-row">
+<a class="btn btn-primary" href="#conocimientos">Ver conocimientos ↗</a>
+<a class="btn btn-ghost" href="CV_Rafael_Castro.pdf" rel="noopener noreferrer" target="_blank">Ver currículum <span aria-hidden="true">↗</span></a>
+</div>
+<div class="subdetail"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Aranjuez, Madrid</div>
+</div>
+<aside aria-label="Resumen de conocimientos informáticos" class="tech-panel">
+<div class="tech-windowbar"><div aria-hidden="true" class="tech-dots"><span></span><span></span><span></span></div><span>INFORMÁTICA / PERFIL</span></div>
+<div class="tech-inside">
+<div class="tech-eyebrow">FORMACIÓN Y CONOCIMIENTOS</div>
+<div class="tech-panel-title">Sistemas, redes<br/><em>y soporte IT.</em></div>
+<div class="tech-rows">
+<div class="tech-row"><span aria-hidden="true" class="tech-row-symbol">01</span><div><strong>Sistemas Windows</strong><small>Instalación y configuración de equipos</small></div><span aria-hidden="true" class="tech-row-arrow">↗</span></div>
+<div class="tech-row"><span aria-hidden="true" class="tech-row-symbol">02</span><div><strong>Redes y conectividad</strong><small>TCP/IP · DNS · DHCP</small></div><span aria-hidden="true" class="tech-row-arrow">↗</span></div>
+<div class="tech-row"><span aria-hidden="true" class="tech-row-symbol">03</span><div><strong>Administración básica</strong><small>Usuarios · Permisos · VirtualBox</small></div><span aria-hidden="true" class="tech-row-arrow">↗</span></div>
+</div>
+<div class="tech-bottom"><span class="tech-bottom-dot"></span> Formación SMR · ASIR en curso</div>
+</div>
+</aside>
+</div>
+</section>
+<div aria-label="Resumen de perfil" class="stripe">
+<div class="wrap stripe-grid">
+<div class="stripe-item"><span>Formación</span><strong>SMR finalizado · ASIR en curso</strong></div>
+<div class="stripe-item"><span>Área de interés</span><strong>Sistemas, redes y soporte IT</strong></div>
+<div class="stripe-item"><span>Experiencia</span><strong>Grupo Diusframi y Zelenza</strong></div>
+</div>
+</div>
+<section class="section" id="conocimientos">
+<div class="wrap">
+<div class="section-heading">
+<div><span class="index">01 / Informática</span><h2>Conocimientos informáticos</h2></div>
+<p>Conocimientos adquiridos en SMR y ASIR. He destacado las áreas en las que tengo más base y que quiero seguir desarrollando profesionalmente.</p>
+</div>
+<div class="skills"><article class="skill-card">
+<div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="4"></rect><path d="M8 21h8m-4-3v3"></path></svg></span><h3>Windows y sistemas operativos</h3></div>
+<p>Instalación de sistemas operativos, configuración inicial de equipos y uso de Windows y Windows Server en la formación.</p>
+<div class="tags"><span>Windows</span><span>Windows Server</span><span>Instalación de software</span></div>
+</article>
+<article class="skill-card">
+<div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="4" r="2"></circle><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle><path d="M12 6v6M5 17v-5h14v5"></path></svg></span><h3>Redes informáticas</h3></div>
+<p>Conocimientos de direccionamiento IP, redes TCP/IP y funcionamiento de servicios de red como DNS y DHCP.</p>
+<div class="tags"><span>TCP/IP</span><span>Direcciones IP</span><span>DNS</span><span>DHCP</span></div>
+</article>
+<article class="skill-card">
+<div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 8h5M19.5 5.5v5"></path></svg></span><h3>Usuarios y permisos</h3></div>
+<p>Conceptos de Active Directory, creación de cuentas y gestión básica de usuarios y permisos de acceso.</p>
+<div class="tags"><span>Active Directory</span><span>Usuarios</span><span>Permisos</span></div>
+</article>
+<article class="skill-card">
+<div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18M9 9v12"></path></svg></span><h3>Virtualización y copias de seguridad</h3></div>
+<p>Uso de VirtualBox para trabajar con máquinas virtuales y conocimientos básicos de copias de seguridad.</p>
+<div class="tags"><span>VirtualBox</span><span>Máquinas virtuales</span><span>Copias de seguridad</span></div>
+</article>
+<article class="skill-card">
+<div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="13" rx="2" width="18" x="3" y="4"></rect><path d="M8 21h8M12 17v4M7 9h4"></path></svg></span><h3>Mantenimiento informático</h3></div>
+<p>Instalación y revisión de equipos, sustitución de componentes, comprobaciones de funcionamiento y mantenimiento.</p>
+<div class="tags"><span>Hardware</span><span>Diagnóstico</span><span>Mantenimiento</span></div>
+</article>
+<article class="skill-card">
+<div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 21a9 9 0 1 0-9-9c0 2 1 4 3 6l-1 4 4-2c1 .6 2 .8 3 .8Z"></path><path d="m9 12 2 2 4-4"></path></svg></span><h3>Soporte y resolución de incidencias</h3></div>
+<p>Experiencia en localización de averías, uso de herramientas de diagnóstico, seguimiento de incidencias y apoyo a otros técnicos.</p>
+<div class="tags"><span>Soporte técnico</span><span>Incidencias</span><span>Atención técnica</span></div>
+</article></div>
+</div>
+</section><section class="section" id="perfil">
+<div class="wrap">
+<div class="section-heading">
+<div><span class="index">02 / Perfil</span><h2>Sobre mí</h2></div>
+<p>Mi formación se centra en informática y mi experiencia me ha permitido trabajar con equipos y resolver problemas técnicos reales.</p>
+</div>
+<div class="about-grid">
+<div class="about-main">
+<p>Mi trayectoria en informática comenzó con la FP Básica de Informática y Comunicaciones y continuó con el grado medio de Sistemas Microinformáticos y Redes (SMR). Actualmente curso ASIR, donde estoy ampliando mis conocimientos de Windows Server, redes, administración de usuarios y virtualización.</p>
+<p>En el ámbito laboral he trabajado en mantenimiento y reparación de equipos, diagnóstico de averías y resolución de incidencias. En Grupo Diusframi también doy apoyo a otros técnicos y participo en la formación de nuevos compañeros. Es una experiencia que me ha ayudado a resolver problemas técnicos de forma práctica y a trabajar con otras personas.</p>
+<p>Me gustaría seguir avanzando hacia puestos relacionados con el soporte informático y la administración de sistemas. Mi objetivo es consolidar mis conocimientos de sistemas y redes y, más adelante, especializarme en ciberseguridad.</p>
+</div>
+<aside class="aside-panel">
+<h3>Hacia dónde quiero avanzar</h3>
+<p class="aside-intro">Estas son las áreas en las que quiero seguir formándome y desarrollando mi carrera.</p>
+<div class="focus-list">
+<div class="focus-item"><span class="focus-number" aria-hidden="true">01</span><div><h4>Administración de sistemas</h4><p>Profundizar en Windows Server, usuarios, permisos y mantenimiento de entornos informáticos.</p></div></div>
+<div class="focus-item"><span class="focus-number" aria-hidden="true">02</span><div><h4>Redes informáticas</h4><p>Mejorar mis conocimientos de conectividad, configuración de redes y servicios como DNS y DHCP.</p></div></div>
+<div class="focus-item"><span class="focus-number" aria-hidden="true">03</span><div><h4>Ciberseguridad <span class="future">A FUTURO</span></h4><p>Orientar mi especialización a la protección de sistemas, el control de accesos y la seguridad de redes.</p></div></div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+
+<section class="section" id="experiencia">
+<div class="wrap">
+<div class="section-heading">
+<div><span class="index">03 / Experiencia</span><h2>Experiencia profesional</h2></div>
+<p>He trabajado en entornos técnicos realizando diagnóstico, mantenimiento y soporte. Esta experiencia complementa mis estudios de informática.</p>
+</div>
+<div class="timeline">
+<article class="job">
+<div class="job-head"><div><span class="employer">Grupo Diusframi</span><h3>Especialista en soporte técnico y formación interna</h3></div><span class="date">Mar. 2026 – actualidad</span></div>
+<ul><li>Resolución de incidencias en dispositivos electrónicos.</li><li>Soporte y formación a nuevos técnicos.</li><li>Uso de herramientas de diagnóstico y comunicación con fabricantes.</li></ul>
+</article>
+<article class="job">
+<div class="job-head"><div><span class="employer">Grupo Diusframi</span><h3>Técnico de reparación</h3></div><span class="date">Ago. 2022 – mar. 2026</span></div>
+<ul><li>Reparación de equipos y sustitución de componentes de hardware.</li><li>Pruebas de funcionamiento y análisis de incidencias.</li><li>Gestión de averías con fabricantes.</li></ul>
+</article>
+<article class="job">
+<div class="job-head"><div><span class="employer">Zelenza</span><h3>Técnico de mantenimiento y reparación</h3></div><span class="date">Abr. – ago. 2022</span></div>
+<ul><li>Reparación, actualización y mantenimiento de equipos informáticos.</li><li>Verificación de funcionamiento y mantenimiento preventivo.</li><li>Prácticas de abril a junio de 2022 y continuación en empresa de junio a agosto.</li></ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="formacion">
+<div class="wrap">
+<div class="section-heading"><div><span class="index">04 / Estudios</span><h2>Formación académica</h2></div><p>Formación en informática desde FP Básica hasta el ciclo superior de Administración de Sistemas Informáticos en Red.</p></div>
+<div class="education">
+<article class="edu"><div class="years">2025 – 2027</div><h3>Administración de Sistemas Informáticos en Red (ASIR)</h3><p>Grado Superior · DigitechFP</p><span class="status">En curso</span></article>
+<article class="edu"><div class="years">2020 – 2022</div><h3>Sistemas Microinformáticos y Redes (SMR)</h3><p>Grado Medio · IES La Arboleda</p></article>
+<article class="edu"><div class="years">2018 – 2020</div><h3>Informática y Comunicaciones</h3><p>FP Básica · IES Ribera del Tajo</p></article>
+</div>
+</div>
+</section>
+<section class="contact" id="contacto">
+<div class="wrap contact-grid">
+<div><span class="index">05 / Contacto</span><h2>¿Hablamos?</h2><p>Estoy interesado en seguir desarrollándome en puestos relacionados con soporte informático, sistemas y redes. Puedes consultar mi currículum o contactar conmigo.</p><a class="btn btn-primary" href="CV_Rafael_Castro.pdf" rel="noopener noreferrer" target="_blank">Consultar currículum <span aria-hidden="true">↗</span></a></div>
+<div class="contact-links">
+<a class="contact-item" href="mailto:rafaeel535@gmail.com"><span><b>Correo electrónico</b><small>rafaeel535@gmail.com</small></span><span aria-hidden="true" class="arrow">↗</span></a>
+<a class="contact-item" href="https://www.linkedin.com/in/rafaelcastroyanguez" rel="noopener noreferrer" target="_blank"><span><b>LinkedIn</b><small>linkedin.com/in/rafaelcastroyanguez</small></span><span aria-hidden="true" class="arrow">↗</span></a>
+<a class="contact-item" href="tel:+34643830757"><span><b>Teléfono</b><small>643 830 757</small></span><span aria-hidden="true" class="arrow">↗</span></a>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year">2026</span> Rafael Castro Yangüez</span><span>Portfolio profesional · <a href="#inicio">Volver arriba ↑</a></span></div></footer>
+<script>
+    (function(){
+      const toggle=document.getElementById('menu');
+      const nav=document.getElementById('navigation');
+      toggle.addEventListener('click',function(){const opened=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));toggle.setAttribute('aria-label',opened?'Cerrar menú':'Abrir menú');});
+      nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menú');});});
+      document.getElementById('year').textContent=new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
